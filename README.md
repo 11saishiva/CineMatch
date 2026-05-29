@@ -1,9 +1,8 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google# CineMatch
+# CineMatch
 
-AI-powered movie recommendation platform built with React, TypeScript, Vite, Express, and Google Gemini.
+An AI-powered movie recommendation platform built with React, TypeScript, Vite, Express, and Google Gemini.
 
-CineMatch helps users discover movies based on their tastes, preferences, and viewing habits through an intelligent recommendation pipeline. Users can create accounts, complete a preference survey, maintain watchlists, and receive personalized movie suggestions generated using Gemini.
+CineMatch helps users discover movies tailored to their tastes through a personalized onboarding survey and an intelligent recommendation pipeline. Users can create accounts, manage watchlists, explore recommendations, and maintain personalized movie preferences through a modern full-stack web application.
 
 ---
 
@@ -11,57 +10,57 @@ CineMatch helps users discover movies based on their tastes, preferences, and vi
 
 ### AI-Powered Recommendations
 
-* Personalized movie recommendations using Gemini 3.5 Flash
+* Personalized movie recommendations using Google Gemini 3.5 Flash
 * Preference-based recommendation generation
-* Backend recommendation processing
-* Dynamic recommendations tailored to individual users
+* Dynamic recommendation pipeline running through the backend
+* Recommendations generated from user interests, genres, pacing preferences, and viewing habits
 
-### Secure Authentication
+### Authentication & Security
 
 * User registration and login
 * SHA-256 password hashing
-* JWT authentication
-* Protected API endpoints
-* Rate limiting against abuse and brute-force attempts
+* JWT-based authentication
+* Protected API routes
+* Rate limiting to prevent abuse and brute-force attacks
 
 ### User Experience
 
 * Interactive onboarding survey
-* Personalized dashboard
+* Personalized movie dashboard
 * Watchlist management
 * User profile management
-* Persistent session handling
+* Persistent user sessions
 
 ### Modern Interface
 
 * Dark cinematic theme
 * Responsive design
 * Smooth animations and transitions
-* Genre-inspired visual presentation
+* Genre-focused visual presentation
 
 ---
 
-# Screenshots
+## Screenshots
 
-## Login
+### Login
 
-![Login Page](images/login.png)
+![Login](./images/login.png)
 
-## Onboarding Survey
+### Onboarding Survey
 
-![Onboarding Survey](images/Quiz.png)
+![Survey](./images/Quiz.png)
 
-## Discover Movies
+### Discover Movies
 
-![Discover Movies](images/discover.png)
+![Discover](./images/discover.png)
 
-## My Library
+### My Library
 
-![My Library](images/my_library.png)
+![Library](./images/my_library.png)
 
-## User Profile
+### User Profile
 
-![User Profile](images/profile.png)
+![Profile](./images/profile.png)
 
 ---
 
@@ -81,7 +80,7 @@ CineMatch helps users discover movies based on their tastes, preferences, and vi
 * Node.js
 * TypeScript
 
-### AI & Recommendation Engine
+### AI Integration
 
 * Google Gemini 3.5 Flash
 * @google/genai SDK
@@ -95,9 +94,10 @@ CineMatch helps users discover movies based on their tastes, preferences, and vi
 
 ### Storage
 
-* Local JSON Database (`data/db.json`)
+* Local JSON Database
 * Session Cache Layer
-* User Preference Persistence
+* Watchlist Persistence
+* User Preference Storage
 
 ---
 
@@ -121,10 +121,10 @@ CineMatch helps users discover movies based on their tastes, preferences, and vi
 │   ├── main.tsx
 │   ├── index.css
 │   └── types.ts
-├── data/
-│   └── db.json
 ├── server.ts
 ├── server-util.ts
+├── data/
+│   └── db.json
 ├── package.json
 └── vite.config.ts
 ```
@@ -146,7 +146,7 @@ npm install
 
 ### Configure Environment Variables
 
-Create a `.env` file and add:
+Create a `.env` file:
 
 ```env
 GEMINI_API_KEY=YOUR_GEMINI_API_KEY
@@ -154,7 +154,7 @@ TMDB_API_KEY=YOUR_TMDB_API_KEY
 APP_URL=http://localhost:3000
 ```
 
-### Start Development Server
+### Start the Application
 
 ```bash
 npm run dev
@@ -164,10 +164,10 @@ npm run dev
 
 ## Security Features
 
-* SHA-256 password hashing
-* JWT session authentication
-* AES-encrypted user preference storage
-* Rate limiting middleware
+* SHA-256 password hashing before storage
+* JWT-based session authentication
+* AES-encrypted preference storage
+* Request rate limiting
 * Server-side API key protection
 * Protected recommendation endpoints
 
@@ -177,9 +177,9 @@ npm run dev
 
 * Collaborative filtering recommendations
 * Movie ratings and reviews
-* Cloud database migration
+* Cloud database integration
 * Recommendation feedback learning
-* Social recommendation sharing
+* Social movie sharing
 * Advanced recommendation analytics
 
 ---
@@ -189,22 +189,3 @@ npm run dev
 **Sai Shiva**
 
 Built to explore recommendation systems, AI integration, secure authentication, and modern full-stack application development.
-.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
-
-# Run and deploy your AI Studio app
-
-This contains everything you need to run your app locally.
-
-View your app in AI Studio: https://ai.studio/apps/91161542-7f91-4425-a359-4146186170ea
-
-## Run Locally
-
-**Prerequisites:**  Node.js
-
-
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
