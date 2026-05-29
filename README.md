@@ -2,7 +2,7 @@
 
 An AI-powered movie recommendation platform built with React, TypeScript, Vite, Express, and Google Gemini.
 
-CineMatch helps users discover movies tailored to their tastes through a personalized onboarding survey and an intelligent recommendation pipeline. Users can create accounts, manage watchlists, explore recommendations, and maintain personalized movie preferences through a modern full-stack web application.
+CineMatch helps users discover movies tailored to their tastes through a personalized onboarding survey and an intelligent recommendation pipeline. The platform combines modern recommendation systems, secure authentication, encrypted user data storage, and a responsive cinematic interface to create a personalized movie discovery experience.
 
 ---
 
@@ -10,33 +10,40 @@ CineMatch helps users discover movies tailored to their tastes through a persona
 
 ### AI-Powered Recommendations
 
-* Personalized movie recommendations using Google Gemini 3.5 Flash
-* Preference-based recommendation generation
-* Dynamic recommendation pipeline running through the backend
-* Recommendations generated from user interests, genres, pacing preferences, and viewing habits
+* Personalized movie recommendations powered by Google Gemini 3.5 Flash
+* Dynamic recommendation generation based on user interests, genres, pacing preferences, and viewing habits
+* Backend recommendation pipeline for secure model interactions
+* Context-aware movie discovery without relying solely on predefined recommendation matrices
 
 ### Authentication & Security
 
-* User registration and login
-* SHA-256 password hashing
-* JWT-based authentication
-* Protected API routes
-* Rate limiting to prevent abuse and brute-force attacks
+* User registration and login system
+* SHA-256 password hashing before database storage
+* JWT-based authentication and protected API routes
+* AES-256-CBC encryption for privacy-sensitive onboarding survey responses
+* Rate limiting to reduce abuse and brute-force attempts
+
+### Session Management
+
+* Redis-inspired in-memory session cache
+* Automatic cleanup of expired sessions
+* Persistent authenticated user sessions
+* Fast session lookups without database overhead
 
 ### User Experience
 
 * Interactive onboarding survey
-* Personalized movie dashboard
+* Personalized recommendation dashboard
 * Watchlist management
 * User profile management
-* Persistent user sessions
+* Persistent user preferences and viewing history
 
 ### Modern Interface
 
 * Dark cinematic theme
-* Responsive design
+* Responsive design across devices
 * Smooth animations and transitions
-* Genre-focused visual presentation
+* Genre-inspired visual presentation
 
 ---
 
@@ -88,46 +95,44 @@ CineMatch helps users discover movies tailored to their tastes through a persona
 ### Security
 
 * SHA-256 Password Hashing
+* AES-256-CBC Encryption
 * JWT Authentication
-* AES-256 Encryption
 * Rate Limiting Middleware
+
+### Session Layer
+
+* Virtual Redis-style In-Memory Session Cache
+* Automatic Expired Session Cleanup
+* Fast Token Validation
 
 ### Storage
 
-* Local JSON Database
-* Session Cache Layer
+* Local JSON Database (`data/db.json`)
+* User Profile Storage
 * Watchlist Persistence
-* User Preference Storage
+* Encrypted Preference Storage
 
 ---
 
-## Project Structure
+## Security Architecture
 
-```text
-.
-├── data/
-│   └── db.json
-├── src/
-│   ├── components/
-│   │   ├── Auth.tsx
-│   │   ├── Home.tsx
-│   │   ├── MovieCard.tsx
-│   │   ├── Navbar.tsx
-│   │   ├── OnboardingSurvey.tsx
-│   │   └── Profile.tsx
-│   ├── data/
-│   │   └── movies.ts
-│   ├── App.tsx
-│   ├── main.tsx
-│   ├── index.css
-│   └── types.ts
-├── server.ts
-├── server-util.ts
-├── data/
-│   └── db.json
-├── package.json
-└── vite.config.ts
-```
+### SHA-256 Password Hashing
+
+User passwords are hashed using SHA-256 before storage, ensuring plaintext credentials are never written to the database.
+
+### AES-256-CBC Encryption
+
+Privacy-sensitive onboarding survey responses are encrypted using AES-256-CBC before persistence and are only decrypted when authenticated users access their profiles.
+
+### JWT Authentication
+
+Authenticated API access is protected through JSON Web Tokens, preventing unauthorized access to personalized resources.
+
+### In-Memory Session Cache
+
+Session tokens are mapped through a Redis-inspired in-memory session manager featuring automatic expiration handling and periodic garbage collection for stale sessions.
+
+---
 
 ## Installation
 
@@ -157,19 +162,9 @@ APP_URL=http://localhost:3000
 ### Start the Application
 
 ```bash
+npm install
 npm run dev
 ```
-
----
-
-## Security Features
-
-* SHA-256 password hashing before storage
-* JWT-based session authentication
-* AES-encrypted preference storage
-* Request rate limiting
-* Server-side API key protection
-* Protected recommendation endpoints
 
 ---
 
@@ -180,7 +175,7 @@ npm run dev
 * Cloud database integration
 * Recommendation feedback learning
 * Social movie sharing
-* Advanced recommendation analytics
+* Recommendation explainability and analytics
 
 ---
 
@@ -188,4 +183,4 @@ npm run dev
 
 **Sai Shiva**
 
-Built to explore recommendation systems, AI integration, secure authentication, and modern full-stack application development.
+Built to explore AI-powered recommendation systems, secure authentication architectures, encrypted data storage, and modern full-stack web application development.
