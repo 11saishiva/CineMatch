@@ -46,6 +46,10 @@ CineMatch helps users discover movies tailored to their tastes through a persona
 * Genre-inspired visual presentation
 
 ---
+## System Architecture
+
+![System Architecture](./images/architecture.png)
+---
 
 ## Screenshots
 
