@@ -1,0 +1,6 @@
+{
+  "name": "Movie Recommendation System",
+  "description": "A customized movie recommendation engine that uses a Gemini ML model to suggest handpicked movies based on favorite genres, languages, and previous watch histories, with complete watchlist tracking and profile analytics.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Roboto", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Roboto", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  
+  --color-brand-indigo: #818cf8; /* Pastel Indigo */
+  --color-brand-purple: #c084fc; /* Pastel Purple */
+}
+
+/* Base custom interactive states and pastel animations */
+body {
+  background-color: #f8fafc; /* Beautiful soft lavender/slate background */
+  color: #1e293b; /* Readable dark slate */
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+  border: 2px solid #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Beautiful custom light glass, pastel shadows and gradients */
+.bento-glass {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.bento-card-gradient {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+}
+
+.bento-glow-indigo {
+  box-shadow: 0 10px 30px -5px rgba(129, 140, 248, 0.12);
+}
+
+.bento-glow-purple {
+  box-shadow: 0 10px 30px -5px rgba(192, 132, 252, 0.12);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleUp {
+  from { opacity: 0; transform: scale(0.97); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-scaleUp {
+  animation: scaleUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* =================================================================
+   EXQUISITE DARK-MODE SELECTOR GLOBAL OVERRIDES
+   ================================================================= */
+body.dark {
+  background-color: #0b0f19 !important;
+  color: #f1f5f9 !important;
+}
+
+/* Card & Background Overrides */
+.dark .bg-white,
+.dark .bg-white\/70,
+.dark .bg-white\/80,
+.dark .bg-white\/90,
+.dark #overview-overlays,
+.dark [id^="movie-card-"] {
+  background-color: #131a26 !important;
+}
+
+/* Semi-transparent and custom-tinted backgrounds for Dark Mode */
+.dark .bg-white\/70 {
+  background-color: rgba(19, 26, 38, 0.70) !important;
+}
+.dark .bg-white\/80 {
+  background-color: rgba(19, 26, 38, 0.80) !important;
+}
+.dark .bg-white\/90 {
+  background-color: rgba(19, 26, 38, 0.90) !important;
+}
+.dark .bg-slate-50\/50,
+.dark .bg-slate-50\/40 {
+  background-color: rgba(30, 41, 59, 0.5) !important;
+}
+.dark .bg-slate-50\/20,
+.dark .bg-slate-50\/10,
+.dark .bg-\[\#f8fafc\]\/20 {
+  background-color: rgba(11, 15, 25, 0.2) !important;
+}
+.dark .bg-indigo-50 {
+  background-color: #1a1e2e !important;
+}
+.dark .bg-indigo-55 {
+  background-color: #2e354f !important;
+}
+.dark .bg-indigo-50\/30 {
+  background-color: rgba(30, 27, 75, 0.3) !important;
+}
+.dark .bg-indigo-50\/10 {
+  background-color: rgba(49, 46, 129, 0.2) !important;
+}
+.dark .bg-indigo-500\/10 {
+  background-color: rgba(99, 102, 241, 0.15) !important;
+}
+
+/* App Header Header Sticky & Footers */
+.dark header, 
+.dark footer {
+  background-color: rgba(11, 15, 25, 0.75) !important;
+  border-color: #1e293b !important;
+}
+
+.dark #nav-mobile-bottom {
+  background-color: rgba(19, 26, 38, 0.95) !important;
+  border-color: #1e293b !important;
+}
+
+/* Glass & Bento Gradients */
+.dark .bento-glass {
+  background: rgba(19, 26, 38, 0.6) !important;
+  border-color: rgba(30, 41, 59, 0.7) !important;
+}
+
+.dark .bento-card-gradient {
+  background: linear-gradient(135deg, #131a26 0%, #0d121c 100%) !important;
+}
+
+/* Border Adapters */
+.dark .border-indigo-50,
+.dark .border-indigo-100,
+.dark .border-indigo-55,
+.dark .border-slate-50,
+.dark .border-slate-100,
+.dark .border-slate-150,
+.dark .border-slate-200 {
+  border-color: #1e293b !important;
+}
+
+/* Light background widgets */
+.dark .bg-slate-50,
+.dark .bg-slate-100,
+.dark #watchlist-toggles-wrapper {
+  background-color: #1e293b !important;
+}
+
+/* Typography Color Adapters */
+.dark .text-slate-800,
+.dark .text-slate-850,
+.dark .text-slate-900,
+.dark #browse-explore-section h3,
+.dark #watchlist-stats h1,
+.dark #nav-logo span {
+  color: #f8fafc !important;
+}
+
+.dark .text-slate-700,
+.dark .text-slate-650,
+.dark .text-slate-600,
+.dark .text-slate-550,
+.dark .text-slate-505 {
+  color: #cbd5e1 !important;
+}
+
+.dark .text-slate-500,
+.dark .text-slate-450,
+.dark .text-slate-400 {
+  color: #94a3b8 !important;
+}
+
+/* Text Fields, Select Boxes and Buttons */
+.dark input[type="text"],
+.dark input[type="password"],
+.dark textarea,
+.dark select {
+  background-color: #1e293b !important;
+  border-color: #334155 !important;
+  color: #ffffff !important;
+}
+
+.dark input::placeholder {
+  color: #64748b !important;
+}
+
+.dark #mood-search-container {
+  background: linear-gradient(to top right, rgba(26, 30, 46, 0.8), rgba(19, 23, 34, 0.25), rgba(13, 18, 29, 0.9)) !important;
+  border-color: #1e293b !important;
+}
+
+.dark .text-slate-755 {
+  color: #818cf8 !important; /* Soft Pastel Indigo Accent */
+}
+
+/* Ensure empty, loading placeholders look brilliant in dark theme */
+.dark #empty-recs-log,
+.dark #empty-watchlist-alert,
+.dark #empty-history-alert,
+.dark #recs-loading-overlay {
+  background-color: #131a26 !important;
+  border-color: #1e293b !important;
+}
+
